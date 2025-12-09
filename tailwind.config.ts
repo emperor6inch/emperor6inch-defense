@@ -9,16 +9,27 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                primary: "#1a1a1a", // Dark Gray/Black
-                secondary: "#2d2d2d", // Lighter Gray
+                primary: "#0a0a0a", // Near Black
+                secondary: "#1c1c1c", // Dark Gray
                 accent: {
-                    green: "#4ade80", // Tactical Green
-                    orange: "#f97316", // Alert Orange
+                    green: "#00ff41", // Matrix/Night Vision Green
+                    red: "#ff3333", // Alert Red
+                    cyan: "#00f3ff", // Cyber Cyan
                 },
+                military: {
+                    olive: "#4b5320",
+                    sand: "#c2b280",
+                    gunmetal: "#2a3439",
+                }
             },
             fontFamily: {
                 sans: ["Inter", "sans-serif"],
+                mono: ["Share Tech Mono", "monospace"], // For technical data
+                display: ["Orbitron", "sans-serif"], // For headers
             },
+            backgroundImage: {
+                'grid-pattern': "linear-gradient(to right, #1c1c1c 1px, transparent 1px), linear-gradient(to bottom, #1c1c1c 1px, transparent 1px)",
+            }
         },
     },
     plugins: [],

@@ -8,47 +8,62 @@ export default function Home() {
     const featuredProducts = products.slice(0, 3);
 
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen bg-primary relative">
+            {/* Global Noise Overlay */}
+            <div className="noise" />
+            <div className="scanline" />
+
             <Hero
-                title="Advanced Defense Solutions for West Africa"
-                subtitle="Securing borders, protecting resources, and empowering nations with cutting-edge technology designed for the region's unique challenges."
-                backgroundImage="/images/hero-bg.jpg" // Placeholder
-                ctaText="View Our Products"
+                title="Advanced Defense Solutions"
+                subtitle="Securing borders and empowering nations with combat-proven technology designed for the harshest environments."
+                backgroundImage="/images/hero-bg.png"
+                ctaText="Deploy Systems"
                 ctaLink="/products"
-                secondaryCtaText="Contact Us"
+                secondaryCtaText="Intel Brief"
                 secondaryCtaLink="/contact"
             />
 
-            {/* Stats Section */}
-            <section className="py-16 bg-secondary border-y border-white/5">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                        <div className="p-6">
-                            <div className="text-4xl font-bold text-accent-green mb-2">500+ km</div>
-                            <div className="text-gray-400 uppercase tracking-wider text-sm">Borders Secured</div>
+            {/* Stats Section - Tactical Dashboard Style */}
+            <section className="py-16 bg-secondary border-b border-white/5 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('/images/grid.png')] opacity-5" />
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+                        <div className="p-6 group hover:bg-white/5 transition-colors">
+                            <div className="text-5xl font-display font-bold text-accent-green mb-2 text-glow group-hover:scale-110 transition-transform duration-300">500+</div>
+                            <div className="text-accent-green/70 font-mono uppercase tracking-widest text-sm">Km Borders Secured</div>
                         </div>
-                        <div className="p-6 border-t md:border-t-0 md:border-l border-white/5">
-                            <div className="text-4xl font-bold text-accent-green mb-2">98%</div>
-                            <div className="text-gray-400 uppercase tracking-wider text-sm">Threat Detection Rate</div>
+                        <div className="p-6 group hover:bg-white/5 transition-colors">
+                            <div className="text-5xl font-display font-bold text-accent-green mb-2 text-glow group-hover:scale-110 transition-transform duration-300">99.9%</div>
+                            <div className="text-accent-green/70 font-mono uppercase tracking-widest text-sm">Threat Neutralization</div>
                         </div>
-                        <div className="p-6 border-t md:border-t-0 md:border-l border-white/5">
-                            <div className="text-4xl font-bold text-accent-green mb-2">24/7</div>
-                            <div className="text-gray-400 uppercase tracking-wider text-sm">Operational Support</div>
+                        <div className="p-6 group hover:bg-white/5 transition-colors">
+                            <div className="text-5xl font-display font-bold text-accent-green mb-2 text-glow group-hover:scale-110 transition-transform duration-300">24/7</div>
+                            <div className="text-accent-green/70 font-mono uppercase tracking-widest text-sm">Active Monitoring</div>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Featured Products */}
-            <section className="py-24 bg-primary">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                            Tactical Solutions
-                        </h2>
-                        <p className="text-gray-400 max-w-2xl mx-auto">
-                            Engineered for the specific security challenges of the Sahel, Gulf of Guinea, and West African interior.
-                        </p>
+            <section className="py-24 bg-primary relative">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-white/10 pb-8">
+                        <div>
+                            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4 uppercase tracking-tighter">
+                                Tactical <span className="text-accent-green">Arsenal</span>
+                            </h2>
+                            <p className="text-gray-400 max-w-xl font-mono text-sm leading-relaxed">
+                                // CLASSIFIED: ELITE TIER EQUIPMENT
+                                <br />
+                                Engineered for the specific security challenges of the Sahel, Gulf of Guinea, and West African interior.
+                            </p>
+                        </div>
+                        <Link
+                            href="/products"
+                            className="hidden md:inline-flex items-center text-accent-green font-mono uppercase tracking-widest hover:text-white transition-colors border border-accent-green/30 px-6 py-3 hover:bg-accent-green/10"
+                        >
+                            View Full Inventory <ArrowRight className="ml-2 h-5 w-5" />
+                        </Link>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -57,47 +72,53 @@ export default function Home() {
                         ))}
                     </div>
 
-                    <div className="mt-12 text-center">
+                    <div className="mt-12 text-center md:hidden">
                         <Link
                             href="/products"
-                            className="inline-flex items-center text-accent-green hover:text-white font-medium transition-colors"
+                            className="inline-flex items-center text-accent-green font-mono uppercase tracking-widest hover:text-white transition-colors"
                         >
-                            View All Products <ArrowRight className="ml-2 h-5 w-5" />
+                            View Full Inventory <ArrowRight className="ml-2 h-5 w-5" />
                         </Link>
                     </div>
                 </div>
             </section>
 
-            {/* Value Props */}
-            <section className="py-24 bg-secondary relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-5" />
+            {/* Value Props - Intel Section */}
+            <section className="py-24 bg-secondary relative overflow-hidden border-t border-accent-green/20">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent-green to-transparent opacity-50" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                        <div className="text-center">
-                            <div className="bg-primary/50 w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-6 border border-white/10">
-                                <Shield className="h-8 w-8 text-accent-green" />
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-4">Regional Expertise</h3>
-                            <p className="text-gray-400">
-                                Founded in Lagos, we understand the terrain, the threats, and the operational requirements of West African security forces.
+                        <div className="bg-primary/50 p-8 border border-white/5 hover:border-accent-green/50 transition-colors group">
+                            <Shield className="h-12 w-12 text-accent-green mb-6 group-hover:animate-pulse" />
+                            <h3 className="text-xl font-display font-bold text-white mb-4 uppercase">Regional Dominance</h3>
+                            <p className="text-gray-400 font-mono text-sm leading-relaxed">
+                                &gt;&gt; Founded in Lagos.
+                                <br />
+                                &gt;&gt; Terrain Optimized.
+                                <br />
+                                &gt;&gt; Threat Adaptive.
                             </p>
                         </div>
-                        <div className="text-center">
-                            <div className="bg-primary/50 w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-6 border border-white/10">
-                                <Map className="h-8 w-8 text-accent-green" />
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-4">Strategic Coverage</h3>
-                            <p className="text-gray-400">
-                                From the Sahelian deserts to the coastal waters of the Gulf of Guinea, our solutions cover every domain.
+                        <div className="bg-primary/50 p-8 border border-white/5 hover:border-accent-green/50 transition-colors group">
+                            <Map className="h-12 w-12 text-accent-green mb-6 group-hover:animate-pulse" />
+                            <h3 className="text-xl font-display font-bold text-white mb-4 uppercase">Strategic Coverage</h3>
+                            <p className="text-gray-400 font-mono text-sm leading-relaxed">
+                                &gt;&gt; Sahelian Deserts.
+                                <br />
+                                &gt;&gt; Gulf Coastal Waters.
+                                <br />
+                                &gt;&gt; Urban Centers.
                             </p>
                         </div>
-                        <div className="text-center">
-                            <div className="bg-primary/50 w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-6 border border-white/10">
-                                <Users className="h-8 w-8 text-accent-green" />
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-4">Civilian Protection</h3>
-                            <p className="text-gray-400">
-                                Our technology prioritizes the safety of civilians and the stability of communities, adhering to international standards.
+                        <div className="bg-primary/50 p-8 border border-white/5 hover:border-accent-green/50 transition-colors group">
+                            <Users className="h-12 w-12 text-accent-green mb-6 group-hover:animate-pulse" />
+                            <h3 className="text-xl font-display font-bold text-white mb-4 uppercase">Civilian Shield</h3>
+                            <p className="text-gray-400 font-mono text-sm leading-relaxed">
+                                &gt;&gt; Collateral Mitigation.
+                                <br />
+                                &gt;&gt; Community Stability.
+                                <br />
+                                &gt;&gt; Human Rights Compliant.
                             </p>
                         </div>
                     </div>
