@@ -21,48 +21,48 @@ export default function Hero({
     secondaryCtaLink,
 }: HeroProps) {
     return (
-        <div className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden border-b-4 border-accent-green">
+        <div className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden border-b-4 border-accent">
             {/* Background Image with Overlay */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
                 style={{ backgroundImage: `url(${backgroundImage})` }}
             >
-                <div className="absolute inset-0 bg-black/40" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/80" />
+                <div className="absolute inset-0 bg-primary/60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-primary/80" />
                 {/* Grid Overlay */}
                 <div className="absolute inset-0 bg-[url('/images/grid.png')] opacity-20 pointer-events-none" />
             </div>
 
             {/* HUD Elements */}
-            <div className="absolute top-10 left-10 w-24 h-24 border-l-2 border-t-2 border-accent-green opacity-50" />
-            <div className="absolute top-10 right-10 w-24 h-24 border-r-2 border-t-2 border-accent-green opacity-50" />
-            <div className="absolute bottom-10 left-10 w-24 h-24 border-l-2 border-b-2 border-accent-green opacity-50" />
-            <div className="absolute bottom-10 right-10 w-24 h-24 border-r-2 border-b-2 border-accent-green opacity-50" />
+            <div className="absolute top-10 left-10 w-24 h-24 border-l-4 border-t-4 border-accent opacity-70" />
+            <div className="absolute top-10 right-10 w-24 h-24 border-r-4 border-t-4 border-accent opacity-70" />
+            <div className="absolute bottom-10 left-10 w-24 h-24 border-l-4 border-b-4 border-accent opacity-70" />
+            <div className="absolute bottom-10 right-10 w-24 h-24 border-r-4 border-b-4 border-accent opacity-70" />
 
             {/* Content */}
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div className="inline-block mb-4 px-4 py-1 border border-accent-green/30 bg-black/50 backdrop-blur-sm rounded-none transform -skew-x-12">
-                    <span className="text-accent-green font-mono text-sm tracking-[0.2em] transform skew-x-12 inline-block">
+                <div className="inline-block mb-6 px-4 py-1 border border-accent/30 bg-primary/80 backdrop-blur-sm rounded-none transform -skew-x-12">
+                    <span className="text-accent font-mono text-sm tracking-[0.2em] transform skew-x-12 inline-block font-bold">
                         SYSTEM STATUS: ONLINE
                     </span>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl font-display font-bold text-white tracking-tighter mb-6 drop-shadow-2xl uppercase animate-glitch cursor-default">
+                <h1 className="text-5xl md:text-8xl font-display font-bold text-white tracking-tighter mb-8 drop-shadow-2xl uppercase animate-glitch cursor-default">
                     {title}
                 </h1>
 
-                <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed font-light border-l-4 border-accent-red pl-6 text-left bg-black/20 backdrop-blur-sm py-4">
+                <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed font-mono border-l-4 border-accent pl-6 text-left bg-primary/40 backdrop-blur-sm py-6">
                     {subtitle}
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                     {ctaText && ctaLink && (
-                        <Button href={ctaLink} variant="primary" className="w-full sm:w-auto text-lg px-10 py-4 uppercase tracking-widest font-bold clip-path-polygon hover:bg-accent-green hover:text-black transition-all duration-300">
+                        <Button href={ctaLink} variant="primary" className="w-full sm:w-auto text-lg px-12 py-5 uppercase tracking-widest font-bold clip-path-polygon hover:bg-accent hover:text-white transition-all duration-0 bg-accent text-primary">
                             {ctaText}
                         </Button>
                     )}
                     {secondaryCtaText && secondaryCtaLink && (
-                        <Button href={secondaryCtaLink} variant="outline" className="w-full sm:w-auto text-lg px-10 py-4 uppercase tracking-widest font-mono border-accent-green text-accent-green hover:bg-accent-green/10">
+                        <Button href={secondaryCtaLink} variant="outline" className="w-full sm:w-auto text-lg px-12 py-5 uppercase tracking-widest font-mono border-2 border-accent text-accent hover:bg-accent/10 transition-all duration-0">
                             {secondaryCtaText}
                         </Button>
                     )}

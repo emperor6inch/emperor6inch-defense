@@ -9,15 +9,15 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                primary: "#0a0a0a", // Near Black
-                secondary: "#1c1c1c", // Dark Gray
+                primary: "#0f172a", // Dark Slate
+                secondary: "#3f4d3a", // Tactical Olive
                 accent: {
-                    green: "#00ff41", // Matrix/Night Vision Green
-                    red: "#ff3333", // Alert Red
-                    cyan: "#00f3ff", // Cyber Cyan
+                    DEFAULT: "#ff4500", // High-Vis Orange/Red
+                    green: "#00ff41", // Keep for HUD elements if needed
                 },
                 military: {
-                    olive: "#4b5320",
+                    olive: "#3f4d3a",
+                    slate: "#0f172a",
                     sand: "#c2b280",
                     gunmetal: "#2a3439",
                 }
@@ -28,7 +28,7 @@ const config: Config = {
                 display: ["Orbitron", "sans-serif"], // For headers
             },
             backgroundImage: {
-                'grid-pattern': "linear-gradient(to right, #1c1c1c 1px, transparent 1px), linear-gradient(to bottom, #1c1c1c 1px, transparent 1px)",
+                'grid-pattern': "linear-gradient(to right, #3f4d3a 1px, transparent 1px), linear-gradient(to bottom, #3f4d3a 1px, transparent 1px)",
             }
         },
     },

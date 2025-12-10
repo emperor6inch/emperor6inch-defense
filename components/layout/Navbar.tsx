@@ -18,13 +18,13 @@ export default function Navbar() {
     return (
         <nav className="sticky top-0 z-50 w-full bg-primary/95 backdrop-blur-sm border-b border-white/10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
+                <div className="flex items-center justify-between h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <Link href="/" className="flex items-center gap-2">
-                            <Shield className="h-8 w-8 text-accent-green" />
-                            <span className="font-bold text-xl tracking-wider text-white">
-                                EMPEROR<span className="text-accent-green">6</span>INCH
+                        <Link href="/" className="flex items-center gap-2 group">
+                            <Shield className="h-8 w-8 text-accent group-hover:animate-pulse transition-all duration-0" />
+                            <span className="font-display font-bold text-2xl tracking-wider text-white">
+                                EMPEROR<span className="text-accent">6</span>INCH
                             </span>
                         </Link>
                     </div>
@@ -36,7 +36,7 @@ export default function Navbar() {
                                 <Link
                                     key={item.label}
                                     href={item.href}
-                                    className="text-gray-300 hover:text-accent-green hover:bg-white/5 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                                    className="text-gray-300 hover:text-accent hover:bg-white/5 px-4 py-2 rounded-none text-sm font-mono uppercase tracking-widest transition-colors duration-0 border border-transparent hover:border-accent/30"
                                 >
                                     {item.label}
                                 </Link>
@@ -52,9 +52,9 @@ export default function Navbar() {
                         >
                             <span className="sr-only">Open main menu</span>
                             {isOpen ? (
-                                <X className="block h-6 w-6" aria-hidden="true" />
+                                <X className="block h-6 w-6 text-accent" aria-hidden="true" />
                             ) : (
-                                <Menu className="block h-6 w-6" aria-hidden="true" />
+                                <Menu className="block h-6 w-6 text-accent" aria-hidden="true" />
                             )}
                         </button>
                     </div>
@@ -70,7 +70,7 @@ export default function Navbar() {
                                 key={item.label}
                                 href={item.href}
                                 onClick={() => setIsOpen(false)}
-                                className="text-gray-300 hover:text-accent-green hover:bg-white/5 block px-3 py-2 rounded-md text-base font-medium"
+                                className="text-gray-300 hover:text-accent hover:bg-white/5 block px-3 py-4 rounded-none text-base font-mono uppercase tracking-widest border-l-2 border-transparent hover:border-accent transition-colors duration-0"
                             >
                                 {item.label}
                             </Link>

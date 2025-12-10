@@ -25,7 +25,7 @@ export const products: Product[] = [
             description: "Reduced ambush risks by 40% in Nigerian border patrols during 2024 pilot program.",
         },
         targets: ["Jihadist insurgencies", "Cross-border terrorism", "Smuggling routes"],
-        image: "/images/terrashield.jpg",
+        image: "/images/terrashield.png",
     },
     {
         id: "apex-apv6",
@@ -51,7 +51,7 @@ export const products: Product[] = [
             description: "Protected critical aid convoys in Zamfara State, sustaining zero casualties in 3 separate ambush attempts.",
         },
         targets: ["Banditry", "Kidnapping syndicates", "Rural violence"],
-        image: "/images/apex-apv6.jpg",
+        image: "/images/apex-apv6.png",
     },
     {
         id: "gulfguardian",
@@ -77,7 +77,7 @@ export const products: Product[] = [
             description: "Intercepted 15 pirate vessels in 2025, securing vital oil infrastructure off the coast of Delta State.",
         },
         targets: ["Piracy", "Illegal fishing", "Oil bunkering"],
-        image: "/images/gulfguardian.jpg",
+        image: "/images/gulfguardian.png",
     },
     {
         id: "agrisecure",
@@ -103,7 +103,7 @@ export const products: Product[] = [
             description: "Reduced clashes by 60% in Benue State grazing disputes through early warning notifications.",
         },
         targets: ["Farmer-herder conflicts", "Resource disputes", "Cattle rustling"],
-        image: "/images/agrisecure.jpg",
+        image: "/images/agrisecure.png",
     },
     {
         id: "cyberhawk",
@@ -129,7 +129,7 @@ export const products: Product[] = [
             description: "Blocked 500+ sophisticated phishing attacks on West African telecom providers in Q1 2025.",
         },
         targets: ["Cybercrime", "Financial fraud", "Data breaches"],
-        image: "/images/cyberhawk.jpg",
+        image: "/images/cyberhawk.png",
     },
     {
         id: "nomad-c2",
@@ -155,6 +155,6 @@ export const products: Product[] = [
             description: "Coordinated successful rescue operations during the 2025 Niger Delta kidnapping incident.",
         },
         targets: ["Spillover extremism", "Mass abductions", "Disaster response"],
-        image: "/images/nomad.jpg",
+        image: "/images/nomad.png",
     },
 ];

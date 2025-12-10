@@ -4,18 +4,18 @@
 
 :root {
   --foreground-rgb: 220, 220, 220;
-  --background-start-rgb: 10, 10, 10;
-  --background-end-rgb: 0, 0, 0;
+  --background-start-rgb: 15, 23, 42; /* Dark Slate */
+  --background-end-rgb: 5, 5, 5;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #050505;
+  background-color: #0f172a; /* Dark Slate */
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 
-/* Scanline Effect */
+/* Scanline Effect - slightly more aggressive */
 .scanline {
   position: fixed;
   top: 0;
@@ -25,12 +25,12 @@ body {
   background: linear-gradient(to bottom,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0) 50%,
-      rgba(0, 0, 0, 0.2) 50%,
-      rgba(0, 0, 0, 0.2));
-  background-size: 100% 4px;
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.3));
+  background-size: 100% 3px;
   pointer-events: none;
   z-index: 50;
-  opacity: 0.3;
+  opacity: 0.15;
 }
 
 /* Noise Texture */
@@ -40,31 +40,40 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.07'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 40;
   opacity: 0.4;
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Brutalist */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #0f172a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2a3439;
-  border: 1px solid #00ff41;
+  background: #3f4d3a; /* Tactical Olive */
+  border: 1px solid #ff4500; /* High-Vis Orange */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00ff41;
+  background: #ff4500;
 }
 
 /* Utility for text glow */
 .text-glow {
-  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  text-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* Orange Glow */
+}
+
+/* Instantaneous Transitions Preference */
+* {
+    transition-duration: 0ms !important;
+}
+
+.hover\:transition-none:hover {
+    transition: none;
 }
